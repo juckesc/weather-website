@@ -21,7 +21,7 @@ weatherForm.addEventListener('submit', (e) => {
         success.textContent = ''
         failure.textContent = data.error;
       } else {
-        success.textContent = `The weather for ${data.location} is ${data.forecastData.forecast}!`;
+        success.textContent = `The weather for ${data.location} is ${data.forecastData.forecast}`;
       };
     });
   });
