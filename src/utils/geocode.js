@@ -1,7 +1,5 @@
 const request = require('request');
 
-const key = 'pk.eyJ1IjoiY2hyaXNqdWNrIiwiYSI6ImNrcWM5ZmR2cDAxMTQydnBlZmF6ZWU1ODIifQ.6kKYcdCxuYnuhKqzRpm-gQ';
-
 const geocode = (location, callback) => {
 
   const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?access_token=${key}`;
