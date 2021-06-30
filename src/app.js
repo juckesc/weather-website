@@ -1,10 +1,15 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
+
+require('dotenv').config();
+
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
 const app = express();
+const port = process.env.PORT || 3000;
+
 const dirPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
@@ -85,6 +90,6 @@ app.get('/*', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Server is up on port 3000');
 });

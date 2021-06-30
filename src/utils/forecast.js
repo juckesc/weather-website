@@ -1,6 +1,9 @@
 const request = require('request');
 
 const forecast = (long, lat, callback) => {
+
+  const key = process.env.FORECAST_KEY;
+
   const url = `http://api.weatherstack.com/current?access_key=${key}&query=${lat},${long}`;
   request({ url, json: true }, (error, response, body) => {
     if (error) {
@@ -16,8 +19,7 @@ const forecast = (long, lat, callback) => {
     } else {
       const { temperature, feelslike } = body.current;
       const data = {
-        temperature,
-        feelslike,
+        forecast: `${temperature} degrees and feels like ${feelslike}`
       };
       callback(undefined, data);
     };
