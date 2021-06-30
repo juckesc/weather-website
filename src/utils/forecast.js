@@ -17,7 +17,6 @@ const forecast = (long, lat, callback) => {
       callback(undefined, data);
     } else {
       const { temperature, feelslike, wind_speed, wind_dir } = body.current;
-      console.log(body.current);
       const data = {
         forecast: `${temperature} degrees and feels like ${feelslike}. The wind speed is ${wind_speed} and wind direction is ${wind_dir}.`,
       };
